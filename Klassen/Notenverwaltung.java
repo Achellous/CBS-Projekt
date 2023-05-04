@@ -1,3 +1,5 @@
+package Klassen;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -14,7 +16,8 @@ public class Notenverwaltung {
     }
 
     public void addNote(String name, String kurs, double note) {
-        Note neueNote = new Note(name, kurs, note);
+        Note neueNote;
+        neueNote = new Note(name, kurs, note);
         notenListe.add(neueNote);
         saveNotenToFile();
     }
