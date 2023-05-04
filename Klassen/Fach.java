@@ -1,17 +1,19 @@
-Java
+package Klassen;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Course {
+public class Fach implements Serializable {
 
     // name
     // listOfGrades
     private String name;
     private HashMap<Student, ArrayList<Grade>> listOfGrades;
 
-    public Course(String name) {
+    public Fach(String name) {
         this.name = name;
-        this.listOfGrades = new HashMap<Student, ArrayList<Grade>>();
+        this.notenListe = new HashMap<>();
     }
 
     public String getName() {
@@ -21,7 +23,7 @@ public class Course {
     public void setName(String name) {
         this.name = name;
     }
-    
+
     // Methode für den Noten-Durchschnitt des Fachs
     public double getAverage(Student student) {
         double count = 0;
@@ -45,4 +47,4 @@ public class Course {
         grades.add(grade);
         listOfGrades.put(student, grades);
     }
-}```
+}

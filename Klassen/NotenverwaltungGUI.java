@@ -1,3 +1,5 @@
+package Klassen;
+
 import javax.swing.*;
 
 public class NotenverwaltungGUI extends JFrame {
