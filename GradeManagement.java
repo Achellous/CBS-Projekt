@@ -1,14 +1,8 @@
-package Klassen;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 
 enum Importance {
     EPO,
@@ -434,7 +428,7 @@ class Student {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, age);
+        return Objects.hash((Object) name, Optional.of(age));
     }
 
     @Override
@@ -448,9 +442,12 @@ record Grade(double value, Importance importance) {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Grade grade = (Grade) o;
-        return value == grade.value && importance == grade.importance;
+        if (o != null && getClass() == o.getClass()) {
+            Grade grade = (Grade) o;
+            return value == grade.value && importance == grade.importance;
+        } else {
+            return false;
+        }
     }
 
     @Override
