@@ -16,7 +16,7 @@ To run the Notenverwaltung application, make sure you have Java installed on you
 
 shell
 
-$ git clone https://github.com/your-username/notenverwaltung.git
+$ git clone https://github.com/Achellous/CBS-Projekt.git
 $ cd notenverwaltung
 $ javac NotenGUI.java
 $ java NotenGUI
